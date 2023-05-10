@@ -22,3 +22,5 @@ In order to connect the VPC to the internet, route table and internet gateway ar
 ![image](https://github.com/ArshaShiri/DevOpsBootcampTerraformDeployToEC2/assets/18715119/25624a46-efc8-4cfa-88a7-137403ff1641)
 ![image](https://github.com/ArshaShiri/DevOpsBootcampTerraformDeployToEC2/assets/18715119/2de5df3f-2df7-4d9e-8586-bad43308c4c7)
 
+Finally we need to add subnet association as well which is done in terraform as a new resoruce. After applying the new configurations, we can check the result:
+![image](https://github.com/ArshaShiri/DevOpsBootcampTerraformDeployToEC2/assets/18715119/8e77d0c2-6778-4528-9faa-8dddd9eda619)
