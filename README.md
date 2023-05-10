@@ -18,4 +18,7 @@ Some default resources like Route table and Network ACL are created as well:
 Route table details:
 ![image](https://github.com/ArshaShiri/DevOpsBootcampTerraformDeployToEC2/assets/18715119/e4cc1754-c502-4f83-9af3-3570c2128a65)
 
-In order to connect the VPC to the internet, route table and internet gateway are defined in `main.tf` file.
+In order to connect the VPC to the internet, route table and internet gateway are defined in `main.tf` file. After applying this via terraform, we can see the new route table is created in AWS:
+![image](https://github.com/ArshaShiri/DevOpsBootcampTerraformDeployToEC2/assets/18715119/25624a46-efc8-4cfa-88a7-137403ff1641)
+![image](https://github.com/ArshaShiri/DevOpsBootcampTerraformDeployToEC2/assets/18715119/2de5df3f-2df7-4d9e-8586-bad43308c4c7)
+
