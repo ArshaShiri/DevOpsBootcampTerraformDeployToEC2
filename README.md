@@ -17,3 +17,5 @@ Some default resources like Route table and Network ACL are created as well:
 
 Route table details:
 ![image](https://github.com/ArshaShiri/DevOpsBootcampTerraformDeployToEC2/assets/18715119/e4cc1754-c502-4f83-9af3-3570c2128a65)
+
+In order to connect the VPC to the internet, route table and internet gateway are defined in `main.tf` file.
