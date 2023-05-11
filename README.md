@@ -24,3 +24,6 @@ In order to connect the VPC to the internet, route table and internet gateway ar
 
 Finally we need to add subnet association as well which is done in terraform as a new resoruce. After applying the new configurations, we can check the result:
 ![image](https://github.com/ArshaShiri/DevOpsBootcampTerraformDeployToEC2/assets/18715119/8e77d0c2-6778-4528-9faa-8dddd9eda619)
+
+
+Instead of defining a new route table, we can also use the default one. The new resource is defined under `aws_default_route_table`.
