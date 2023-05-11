@@ -31,4 +31,5 @@ Instead of defining a new route table, we can also use the default one. The new 
 
 ## Security Group
 
-The `aws_security_group` resource is defined for this section. Don't forget to set the `my_ip` variable to your public ip address before applying.
+The `aws_security_group` resource is defined for this section. Don't forget to set the `my_ip` variable to your public ip address before applying. The results can be seen in AWS:
+![image](https://github.com/ArshaShiri/DevOpsBootcampTerraformDeployToEC2/assets/18715119/6940d71c-f7cc-4b1b-b107-80c93ca494c0)
