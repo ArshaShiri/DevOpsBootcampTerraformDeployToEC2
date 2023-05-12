@@ -68,3 +68,6 @@ It is much better to automate key-value creation. It is demonstrated how to do s
 ## Installing Docker and Running nginx
 
 The `user_data` section under `aws_instance` is added which then runs the `entry-script.sh` script upon **entry**. We can confirm if nginx is installed by sshing into the server and run `docker ps`.
+
+The server can be accessed via the browser as well:
+![image](https://github.com/ArshaShiri/DevOpsBootcampTerraformDeployToEC2/assets/18715119/93aa1ee5-be92-4dd6-8f4a-9871dd094203)
