@@ -59,3 +59,5 @@ After applying the new cofig we can see the new EC2 instance:
 We can also ssh into our server:
 
     ssh -i .ssh/server-key-pair.pem ec2-user@{public-ip-address}
+
+It is much better to automate key-value creation. It is demonstrated how to do so by the use of `aws_key_pair` resource and defining the corresponding variable public_key_location. The public key absolute path can be given and terraform will use the value.
