@@ -53,3 +53,9 @@ After creaation, the private key is downloaded automatically and the key value p
     chmod 400 .ssh/server-key-pair.pem
     ls -l .ssh/server-key-pair.pem
     
+After applying the new cofig we can see the new EC2 instance:
+![image](https://github.com/ArshaShiri/DevOpsBootcampTerraformDeployToEC2/assets/18715119/57eb76f5-e7da-4cb1-b3b7-09a76dfccc49)
+
+We can also ssh into our server:
+
+    ssh -i .ssh/server-key-pair.pem ec2-user@{public-ip-address}
