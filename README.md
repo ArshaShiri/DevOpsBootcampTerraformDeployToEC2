@@ -37,3 +37,19 @@ The `aws_security_group` resource is defined for this section. Don't forget to s
 Similarly, we can also define `aws_default_security_group`
 ![image](https://github.com/ArshaShiri/DevOpsBootcampTerraformDeployToEC2/assets/18715119/e9bf0817-4cfc-494e-b736-7f231cbf1273)
 
+## EC2 Instance
+
+In order to SSH in the EC2 server, we need to createa a key value pair in AWS under EC2 service:
+![image](https://github.com/ArshaShiri/DevOpsBootcampTerraformDeployToEC2/assets/18715119/c78bc474-b44a-4435-bf57-22c2f5292e5c)
+![image](https://github.com/ArshaShiri/DevOpsBootcampTerraformDeployToEC2/assets/18715119/e802270a-66f6-45e8-888b-5406a60aff1b)
+
+After creaation, the private key is downloaded automatically and the key value pair can be seen in AWS:
+![image](https://github.com/ArshaShiri/DevOpsBootcampTerraformDeployToEC2/assets/18715119/0a32e41f-f45d-41a2-96e3-5ccd1cceca62)
+
+    # We need to move this file to .ssh folder
+    mv server-key-pair.pem .ssh/
+    
+    # We also need to restrict the premisison (write premisison only) AWS will reject the connection if the premission is not set correctly.
+    chmod 400 .ssh/server-key-pair.pem
+    ls -l .ssh/server-key-pair.pem
+    
