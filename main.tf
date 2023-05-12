@@ -182,6 +182,9 @@ resource "aws_instance" "myapp-server" {
     # Use instead:
     # key_name = aws_key_pair.ssh-key.key_name
 
+    # This script runs only in the start of EC2 creation and in the subsequent runs it is not executed (Unless the resource is destroyed and created again of course)
+    user_data = file("entry-script.sh")
+
     tags = {
         Name = "${var.env_prefix}-server"
     }
