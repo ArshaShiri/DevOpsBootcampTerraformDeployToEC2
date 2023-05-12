@@ -6,6 +6,9 @@ After updating the `main.tf` and `terraform.tfvars` files to define the necessar
 
     terraform plan
     terraform apply --auto-approve
+    
+    # Use this to get the supported attributes
+    terraform state show aws_instance.myapp-server
 
 we can then check the created resource on AWS:
 
