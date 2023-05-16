@@ -9,6 +9,7 @@ variable env_prefix {}
 variable my_ip {}
 variable instance_type {}
 variable public_key_location {}
+variable private_key_location {}
 
 resource "aws_vpc" "myapp-vpc" {
   cidr_block = var.vpc_cidr_block
@@ -184,6 +185,52 @@ resource "aws_instance" "myapp-server" {
 
     # This script runs only in the start of EC2 creation and in the subsequent runs it is not executed (Unless the resource is destroyed and created again of course)
     user_data = file("entry-script.sh")
+
+    # Specifies the connection of the provisioner to the server.
+    connection {
+        type = "ssh"
+        host = self.public_ip
+        user = "ec2-user"
+        private_key = file(var.private_key_location)
+    }
+
+    # We use this to copy the file we need to the server.
+    provisioner "file" {
+        source = "entry-script.sh"
+        destination = "/home/ec2-user/entry-script-on-ec2.sh"
+    }
+
+    # provisioner "file" {
+    #     source = "entry-script.sh"
+    #     destination = "/home/ec2-user/entry-script-on-ec2.sh"
+    # 
+    #     # we can use another connection block to use this provisioner on another server if we need to.
+    #     connection {
+    #         type = "ssh"
+    #         host = some-other-server.public_ip
+    #         user = "ec2-user"
+    #         private_key = file(var.private_key_location)
+    #     }
+    # }
+
+    # Allows us to connect to the server and execute commands on it.
+    provisioner "remote-exec" {
+        # inline = [
+        #     "commands here"
+        #     "commands here"
+        #     .
+        #     .
+        #     .
+        # ]
+
+        # This script should already exist on the server before executing it.
+        script = file("entry-script-on-ec2.sh")
+    }
+
+    # Executes commands on our local computer.
+    provisioner "local-exec" {
+        command = "echo ${self.public_ip} > output.txt"
+    }
 
     tags = {
         Name = "${var.env_prefix}-server"
